@@ -3,9 +3,11 @@ body {
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  font-size: 16px;
   color: #333;
   justify-items: center;
   align-items: center;
+  z-index: 0;
 }
 
 header {
@@ -34,7 +36,18 @@ div {
 
 h3 {
   color: #1fbc89;
-  font-size: 18px;
+  position: relative;
+  font-size: 1.5em;
+}
+
+h3::before {
+  content: "";
+  position: absolute;
+  margin-left: -14.5px;
+  width: 8px;
+  height: 30px;
+  background-color: #1fbc89;
+  border-radius: 8px;
 }
 
 .interests ul li {
@@ -85,122 +98,6 @@ li {
   overflow: hidden;
 }
 
-@media (max-width: 480px) {
-  .container {
-    width: 95%;
-    padding: 10px;
-    display: block;
-  }
-
-  .personal-info,
-  .content-container {
-    flex: 1;
-    padding: 5px;
-    text-align: left;
-  }
-
-  .objective,
-  .work-experience,
-  .certifications,
-  .honors-and-awards {
-    margin-left: 10.5px;
-  }
-
-  .horizontal-container {
-    flex-direction: column;
-  }
-
-  .content-container::before {
-    display: none !important;
-  }
-
-  .background::before,
-  .background::after,
-  .small-circle {
-    z-index: -1 !important;
-  }
-
-  .image {
-    width: 80px;
-    height: 80px;
-    padding: 10px;
-  }
-
-  .color-title {
-    font-size: 16px;
-  }
-
-  .info {
-    font-size: 11px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .container {
-    width: 100%;
-  }
-
-  .image {
-    width: 100px;
-    height: 100px;
-  }
-
-  .info {
-    font-size: 12px;
-  }
-
-  .background {
-    z-index: 0;
-  }
-
-  .personal-info {
-    flex: 0.2;
-  }
-
-  .content-container {
-    flex: 0.8;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    width: 85%;
-  }
-
-  .image {
-    width: 120px;
-    height: 120px;
-  }
-
-  .info {
-    font-size: 13px;
-  }
-
-  .personal-info {
-    flex: 0.3;
-  }
-
-  .content-container {
-    flex: 0.7;
-  }
-}
-
-@media (min-width: 1025px) {
-  .container {
-    width: 80%;
-    max-width: 810px;
-  }
-
-  .image {
-    width: 150px;
-    height: 150px;
-  }
-
-  .info {
-    font-size: 14px;
-  }
-}
-
 .horizontal-container {
   display: flex;
   flex-direction: row;
@@ -208,14 +105,14 @@ li {
   padding-bottom: 3px;
 }
 
-.text-justify {
-  text-align: justify;
-}
-
 .personal-info {
   flex: 0.3;
   padding: 20px;
   text-align: center;
+}
+
+.personal-info h3 {
+  text-align: justify;
 }
 
 .content-container::before {
@@ -272,20 +169,6 @@ li {
 
 .name {
   margin: 20px 4px;
-}
-
-.outline {
-  position: relative;
-}
-
-.outline::before {
-  content: "";
-  position: absolute;
-  margin-left: -14.5px;
-  width: 8px;
-  height: 30px;
-  background-color: #1fbc89;
-  border-radius: 8px;
 }
 
 .info {
@@ -438,4 +321,149 @@ li {
 
 .separator {
   padding: 0 10px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 10px;
+    display: block;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  .personal-info,
+  .content-container {
+    flex: 1;
+    padding: 5px;
+    text-align: left;
+  }
+
+  h3 {
+    margin-left: 5px;
+  }
+
+  .content-container::before {
+    display: none !important;
+  }
+
+  .background::before,
+  .background::after,
+  .small-circle {
+    z-index: -1 !important;
+  }
+
+  .image {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+
+  .color-title {
+    font-size: 16px;
+  }
+
+  .info {
+    font-size: 11px;
+  }
+
+  .name {
+    text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  body {
+    font-size: 14px; 
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  .image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .info {
+    font-size: 12px;
+  }
+
+  .background {
+    z-index: 0;
+  }
+
+  .personal-info {
+    flex: 0.2;
+  }
+
+  .content-container {
+    flex: 0.8;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 85%;
+  }
+
+  body {
+    font-size: 15px; 
+  }
+
+  h3 {
+    font-size: 1.4em;
+  }
+
+  .image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .info {
+    font-size: 13px;
+  }
+
+  .personal-info {
+    flex: 0.3;
+  }
+
+  .content-container {
+    flex: 0.7;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    width: 80%;
+    max-width: 810px;
+  }
+
+  body {
+    font-size: 16px; 
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  .image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .info {
+    font-size: 14px;
+  }
 }
